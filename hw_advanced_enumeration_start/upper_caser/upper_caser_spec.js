@@ -4,6 +4,7 @@ const UpperCaser = require('./upper_caser.js');
 describe('UpperCaser', function () {
   it('should be able to convert a single word to uppercase', function () {
     const upperCaser = new UpperCaser(['shouting']);
+    //console.log("HELLO :", upperCaser.toUpperCase());
     assert.deepStrictEqual(upperCaser.toUpperCase(), ['SHOUTING']);
   });
 
