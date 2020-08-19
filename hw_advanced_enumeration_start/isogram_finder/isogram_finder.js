@@ -18,15 +18,13 @@ for (const character of wordLowerSplit) {
         letterCount[character]=1;
     }
 }
-
+value = true;
 for (var key in letterCount){
-    if(letterCount[key] > 1){
-        return false;
-    }
-    else {
-        return true;
+    if(letterCount[key] != 1){
+        value = false;
     }
 }
+return value;
 
 }
 
