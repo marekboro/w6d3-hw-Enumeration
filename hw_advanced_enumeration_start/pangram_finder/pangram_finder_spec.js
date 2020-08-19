@@ -5,10 +5,11 @@ describe('PangramFinder', function () {
   it('should be able to detect a pangram', function () {
     const pangramFinder = new PangramFinder('the quick brown fox jumps over the lazy dog');
     //console.log(pangramFinder.printAlphabet());
+    //console.log(pangramFinder.isPangram());
     assert.strictEqual(pangramFinder.isPangram(), true);
   });
 
-  xit('should be able to detect a non-pangram', function () {
+  it('should be able to detect a non-pangram', function () {
     const pangramFinder = new PangramFinder('this is not a pangram so the result should be false');
     assert.strictEqual(pangramFinder.isPangram(), false);
   });
