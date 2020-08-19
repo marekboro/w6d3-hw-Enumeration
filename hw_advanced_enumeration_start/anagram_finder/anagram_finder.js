@@ -14,15 +14,9 @@ AnagramFinder.prototype.findAnagrams = function (otherWords) {
 const anagrams = [];
 splitWord = this.word.toLowerCase().split('').sort().join("");
 
-
-
-
-
 for (checkedWord of otherWords){
     var converted = checkedWord.toLowerCase().split('').sort().join("");
-    
-    
-    if(converted === splitWord) {
+    if((converted === splitWord) && (this.word != checkedWord)) {
         anagrams.push(checkedWord);
     }
 }
