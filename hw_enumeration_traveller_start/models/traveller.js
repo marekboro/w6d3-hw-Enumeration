@@ -1,13 +1,13 @@
-const Traveller = function(journeys) {
+const Traveller = function (journeys) {
   this.journeys = journeys;
 };
 
-Traveller.prototype.getJourneyStartLocations = function() {
+Traveller.prototype.getJourneyStartLocations = function () {
   //!! R E F A C T O R E D
-  return this.journeys.map((journey)=>{
-       return journey.startLocation;
-     });
- 
+  return this.journeys.map((journey) => {
+    return journey.startLocation;
+  });
+
   // WORKS
   // const startLocations = this.journeys.map((journey)=>{
   //   return journey.startLocation;
@@ -17,7 +17,7 @@ Traveller.prototype.getJourneyStartLocations = function() {
 };
 
 Traveller.prototype.getJourneyEndLocations = function () {
-  return this.journeys.map((journey)=>{
+  return this.journeys.map((journey) => {
     return journey.endLocation;
   });
 };
@@ -36,17 +36,24 @@ Traveller.prototype.getJourneysByMinDistance = function (minDistance) {
 };
 
 Traveller.prototype.calculateTotalDistanceTravelled = function () {
-//! R E D U C E
+  //! R E D U C E
   return this.journeys.reduce((total, journey) => {
-    return total+journey.distance;
-  },0); //!  ADD THAT 0 after ARROW FUNCTION
+    return total + journey.distance;
+  }, 0); //!  ADD THAT 0 after ARROW FUNCTION
 
 
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
+  //?!  Create a list of modes 
+  const travelModes = []
+  for (const journey of this.journeys) {
+    if (!travelModes.includes(journey.transport)) {
+      travelModes.push(journey.transport) 
+    }
+  }
+  return travelModes;
 
 };
-
 
 module.exports = Traveller;
