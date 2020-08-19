@@ -12,15 +12,17 @@ AnagramFinder.prototype.findAnagrams = function (otherWords) {
 //! sort a string, then compare it! - much simpler.
 //! FOUND MAGIC - 
 const anagrams = [];
-splitWord = this.word.split().toLowerCase();
+splitWord = this.word.toLowerCase().split('').sort().join("");
 
 
 
 
 
 for (checkedWord of otherWords){
-    var converted = checkedWord.sort().toLowerCase();
-    if(converted === sortedWord) {
+    var converted = checkedWord.toLowerCase().split('').sort().join("");
+    
+    
+    if(converted === splitWord) {
         anagrams.push(checkedWord);
     }
 }
@@ -31,13 +33,13 @@ module.exports = AnagramFinder;
 
 
 // EXPERIMENTAL
-word1 = "act"
-word2 = "cat"
+// word1 = "act"
+// word2 = "cat"
 
-word1a = word1.toLowerCase().split('').sort().join("");
-word2a = word2.toLowerCase().split('').sort().join("");
-if (word1a == word2a){
-    console.log("Hakuna Matata");
-}
-console.log("1: ",word1a);
-console.log("2: ",word2a);
+// word1a = word1.toLowerCase().split('').sort().join("");
+// word2a = word2.toLowerCase().split('').sort().join("");
+// if (word1a == word2a){
+//     console.log("Hakuna Matata");
+// }
+// console.log("1: ",word1a);
+// console.log("2: ",word2a);
